@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckllnmq6vc5dp"]
+
+[ext_resource type="Script" uid="uid://4bpxxuov4dkw" path="res://scripts/player.gd" id="1_3vyb7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sh265"]
+
+[node name="Player" type="Node2D"]
+position = Vector2(438, 274)
+script = ExtResource("1_3vyb7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+rotation = 0.7853982
+sprite_frames = SubResource("SpriteFrames_sh265")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-44, -15, -138, -101, -90, -141, -20, -79, 84, -143, 54, -33, 110, 51, 44, 85, -4, 43, -100, 83)
