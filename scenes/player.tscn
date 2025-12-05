@@ -4,14 +4,23 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sh265"]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(438, 274)
 script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_sh265")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="plane" type="Polygon2D" parent="."]
+position = Vector2(-7.6293945e-06, 7.6293945e-06)
+rotation = 0.79873204
+scale = Vector2(0.25403222, 0.20175442)
 polygon = PackedVector2Array(-44, -15, -138, -101, -90, -141, -20, -79, 84, -143, 54, -33, 110, 51, 44, 85, -4, 43, -100, 83)
+
+[node name="boost flames" type="Polygon2D" parent="."]
+visible = false
+color = Color(1, 0.27058825, 0.21176471, 1)
+polygon = PackedVector2Array(-25, -8, -37, -17, -37, -11, -48, -17, -46, -11, -61, -12, -49, -6, -53, 0, -41, -4, -43, 0, -28, -3)
