@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjkwopfq7jsfy"]
+
+[ext_resource type="Script" uid="uid://cwdjhbt3ptu5o" path="res://scripts/destroyer.gd" id="1_l4bph"]
+
+[node name="Destroyer" type="Node2D"]
+script = ExtResource("1_l4bph")
+
+[node name="destroyer" type="Polygon2D" parent="."]
+color = Color(0.65225875, 0.5671207, 0.94534415, 1)
+polygon = PackedVector2Array(-302, -90, 94, -80, 424, -60, 324, 76, -276, 74, -422, -102)
+
+[node name="canon" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-244, -54, -316, -232, -260, -238, -214, -66)

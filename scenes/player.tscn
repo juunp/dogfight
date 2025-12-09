@@ -11,12 +11,12 @@ script = ExtResource("1_3vyb7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 sprite_frames = SubResource("SpriteFrames_sh265")
 
 [node name="plane" type="Polygon2D" parent="."]
 position = Vector2(-7.6293945e-06, 7.6293945e-06)
-rotation = 0.79873204
+rotation = 0.7987321
 scale = Vector2(0.25403222, 0.20175442)
 polygon = PackedVector2Array(-44, -15, -138, -101, -90, -141, -20, -79, 84, -143, 54, -33, 110, 51, 44, 85, -4, 43, -100, 83)
 
@@ -24,3 +24,9 @@ polygon = PackedVector2Array(-44, -15, -138, -101, -90, -141, -20, -79, 84, -143
 visible = false
 color = Color(1, 0.27058825, 0.21176471, 1)
 polygon = PackedVector2Array(-25, -8, -37, -17, -37, -11, -48, -17, -46, -11, -61, -12, -49, -6, -53, 0, -41, -4, -43, 0, -28, -3)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 50
+limit_top = 100
+limit_right = 200
+limit_bottom = 200
