@@ -1,10 +1,11 @@
+class_name Player
 extends CharacterBody2D
 
-@export var _health := 100
-@export var _speed := 400
-@export var _rotation_speed := 4
+@export var _health : int = 100
+@export var speed : int = 400
+@export var _rotation_speed : int = 4
 
-@onready var _boost_flames := $"boost flames"
+@onready var _boost_flames : Polygon2D = $"boost flames"
 
 func _ready() -> void:
 	rotation_degrees = -45
@@ -12,13 +13,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity -= Vector2(velocity).normalized() 
 	
-	var rotation_speed = _rotation_speed * delta
+	var rotation_speed: float = _rotation_speed * delta
 	if Input.is_action_pressed("rotate_left"):
 		rotation = rotation + rotation_speed * - 1
 	elif Input.is_action_pressed("rotate_right"):
 		rotation = rotation + rotation_speed
 	if Input.is_action_pressed("accelerate"):
-		velocity = transform.x * _speed
+		velocity = transform.x * speed
 		_boost_flames.visible = true
 	if Input.is_action_just_released("accelerate"):
 		_boost_flames.visible = false;

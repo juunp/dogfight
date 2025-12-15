@@ -4,7 +4,7 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sh265"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(438, 274)
 script = ExtResource("1_3vyb7")
 
@@ -24,9 +24,3 @@ polygon = PackedVector2Array(-44, -15, -138, -101, -90, -141, -20, -79, 84, -143
 visible = false
 color = Color(1, 0.27058825, 0.21176471, 1)
 polygon = PackedVector2Array(-25, -8, -37, -17, -37, -11, -48, -17, -46, -11, -61, -12, -49, -6, -53, 0, -41, -4, -43, 0, -28, -3)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 50
-limit_top = 100
-limit_right = 200
-limit_bottom = 200

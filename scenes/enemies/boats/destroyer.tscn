@@ -3,11 +3,24 @@
 [ext_resource type="Script" uid="uid://cwdjhbt3ptu5o" path="res://scripts/destroyer.gd" id="1_l4bph"]
 
 [node name="Destroyer" type="Node2D"]
+scale = Vector2(0.70207775, 0.56)
 script = ExtResource("1_l4bph")
+frames_count = 1
 
 [node name="destroyer" type="Polygon2D" parent="."]
+scale = Vector2(0.25933844, 0.28571427)
 color = Color(0.65225875, 0.5671207, 0.94534415, 1)
 polygon = PackedVector2Array(-302, -90, 94, -80, 424, -60, 324, 76, -276, 74, -422, -102)
 
 [node name="canon" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-244, -54, -316, -232, -260, -238, -214, -66)
+z_index = -1
+position = Vector2(-76.91456, -17.857145)
+rotation = -0.008333681
+scale = Vector2(0.25933844, 0.28571427)
+offset = Vector2(286.567, 136.62888)
+polygon = PackedVector2Array(-292.80844, -175.097, -37.40416, -171.85178, -37.576782, -138.43747, -293.43964, -106.34938)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

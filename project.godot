@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="dogfight"
-run/main_scene="uid://ckllnmq6vc5dp"
+run/main_scene="uid://cb0ca3c2wbp7h"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[debug]
+[global_group]
 
-gdscript/warnings/untyped_declaration=1
-gdscript/warnings/inferred_declaration=1
+player=""
+bullets=""
 
 [input]
 
