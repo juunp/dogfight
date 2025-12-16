@@ -20,7 +20,11 @@ scale = Vector2(0.25933844, 0.28571427)
 offset = Vector2(286.567, 136.62888)
 polygon = PackedVector2Array(-292.80844, -175.097, -37.40416, -171.85178, -37.576782, -138.43747, -293.43964, -106.34938)
 
+[node name="bullet_spawn" type="Marker2D" parent="canon"]
+position = Vector2(247.19868, -4.38027)
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="shoot" from="." to="." method="_on_shoot"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

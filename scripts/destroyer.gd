@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	if player != null && can_shoot():
-		shoot()
+		shoot.emit(calculate_angle_to_player(player.global_position), canon.get_node("bullet_spawn").global_position)
 		
 func find_player():
 	player = get_tree().get_first_node_in_group("player")
@@ -32,6 +32,3 @@ func calculate_angle_to_player(player_position: Vector2) -> bool:
 	var angle = rad_to_deg(direction.angle())
 	return angle < _min_angle && angle > _max_angle
 	
-func shoot() -> void:
-	print("shoot")
-	pass
