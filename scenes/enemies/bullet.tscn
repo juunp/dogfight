@@ -7,9 +7,12 @@
 points = PackedVector2Array(5, 4.5, 5, -1.5, 0, -4.5, -5, -1.5, -5, 4.5)
 
 [node name="Bullet" type="CharacterBody2D" groups=["bullets"]]
+z_index = 5
 script = ExtResource("1_p5aa7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(1, 0.9)
 texture = ExtResource("1_hl25f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

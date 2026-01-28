@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjkwopfq7jsfy"]
 
-[ext_resource type="Script" uid="uid://cwdjhbt3ptu5o" path="res://scripts/destroyer.gd" id="1_l4bph"]
+[ext_resource type="Script" uid="uid://cwdjhbt3ptu5o" path="res://scenes/enemies/boats/destroyer.gd" id="1_l4bph"]
 
 [node name="Destroyer" type="Node2D"]
 scale = Vector2(0.70207775, 0.56)
@@ -26,5 +26,4 @@ position = Vector2(247.19868, -4.38027)
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="shoot" from="." to="." method="_on_shoot"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

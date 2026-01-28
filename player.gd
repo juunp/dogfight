@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var _boost_flames : Polygon2D = $"boost flames"
 
 func _ready() -> void:
+	_boost_flames.visible = false
 	rotation_degrees = -45
 
 func _physics_process(delta: float) -> void:
@@ -22,7 +23,7 @@ func _physics_process(delta: float) -> void:
 		velocity = transform.x * speed
 		_boost_flames.visible = true
 	if Input.is_action_just_released("accelerate"):
-		_boost_flames.visible = false;
+		_boost_flames.visible = false
 	move_and_slide()
 	
 func take_damage(amount: int) -> int:
