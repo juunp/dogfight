@@ -18,7 +18,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if player == null:
 		return
-	if angle_to_player_in_view(calculate_angle_to_player(player.global_position)):
+	if calculate_angle_to_player(player.global_position):
 		canon.look_at(player.position)
 
 func _on_timer_timeout() -> void:
@@ -29,14 +29,13 @@ func find_player():
 	player = get_tree().get_first_node_in_group("player")
 
 func can_shoot() -> bool:
-	return angle_to_player_in_view(calculate_angle_to_player(player.global_position))
+	return calculate_angle_to_player(player.global_position)
 
 func calculate_angle_to_player(player_position: Vector2) -> float:
 	var direction = player_position - global_position
-	return rad_to_deg(direction.angle())
-	
-func angle_to_player_in_view(angle: float) -> bool:
+	var angle = rad_to_deg(direction.angle())
 	return angle < _min_angle && angle > _max_angle
+	
 
 
 func shoot() -> void: 

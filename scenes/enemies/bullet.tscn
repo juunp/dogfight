@@ -3,18 +3,32 @@
 [ext_resource type="Texture2D" uid="uid://d4gy21ellesr6" path="res://assets/bullet.png" id="1_hl25f"]
 [ext_resource type="Script" uid="uid://i8uw67r5vun8" path="res://scenes/enemies/bullet.gd" id="1_p5aa7"]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_hl25f"]
-points = PackedVector2Array(5, 4.5, 5, -1.5, 0, -4.5, -5, -1.5, -5, 4.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5aa7"]
+radius = 8.0
+height = 16.0
 
 [node name="Bullet" type="CharacterBody2D" groups=["bullets"]]
 z_index = 5
+collision_layer = 2
 script = ExtResource("1_p5aa7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 0.5)
-scale = Vector2(1, 0.9)
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(1.7, 1.53)
 texture = ExtResource("1_hl25f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("ConvexPolygonShape2D_hl25f")
+shape = SubResource("CapsuleShape2D_p5aa7")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_p5aa7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

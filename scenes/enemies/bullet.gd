@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Bullet 
 
-@export var SPEED = 110
+@export var SPEED = 250
 
 var direction : float
 var spawnPosition : Vector2
@@ -14,3 +14,9 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2(0, -SPEED).rotated(direction)
 	move_and_slide()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	queue_free() 
+
+func _on_timer_timeout() -> void:
+	queue_free() # Replace with function body.
